@@ -1,0 +1,12 @@
+.circle{
+    overflow-x: hidden;
+    height: 20px;
+    width: 20px;
+    border-radius: 20px;
+    position: absolute;
+    top:0;
+    left:0;
+    /* background-color: black; */
+    pointer-events: none;
+    z-index : 999;
+}
