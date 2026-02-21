@@ -55,35 +55,3 @@ form.addEventListener('submit', e => {
       }, 5000);
     });
 });
-
-
-const music = document.getElementById("bgMusic");
-const toggleBtn = document.getElementById("toggleSound");
-
-// Try playing music on first interaction
-const tryPlayMusic = () => {
-  music.play().then(() => {
-    toggleBtn.textContent = "🔇";
-  }).catch(err => {
-    console.log("Autoplay blocked:", err);
-  });
-
-  document.removeEventListener("click", tryPlayMusic);
-  document.removeEventListener("keydown", tryPlayMusic);
-  document.removeEventListener("scroll", tryPlayMusic);
-};
-
-document.addEventListener("click", tryPlayMusic);
-document.addEventListener("keydown", tryPlayMusic);
-document.addEventListener("scroll", tryPlayMusic);
-
-// Toggle play/pause
-toggleBtn.addEventListener("click", () => {
-  if (music.paused) {
-    music.play();
-    toggleBtn.textContent = "🔊";
-  } else {
-    music.pause();
-    toggleBtn.textContent = "🔇";
-  }
-});
